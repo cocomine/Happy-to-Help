@@ -18,5 +18,6 @@
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/Player Death2"/>
 	<classpathentry kind="lib" path="D:/minecraft JDK/1.8 plugins/spigot-1.8.8.jar"/>
+	<classpathentry kind="lib" path="D:/minecraft JDK/1.8 plugins/ActionBarAPI-1.5.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

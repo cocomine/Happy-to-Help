@@ -1,0 +1,13 @@
+name: HappyToHelp
+main: com.cocopixelmc.HappyToHelp.Main
+version: 0.1
+author: [cocomine]
+softdepend: [PlayerDeath2]
+description: Help player to start
+commands:
+  happyhelp:
+    description: Plugin Command
+permissions:
+  HappyToHelp.admin:
+    description: admin permissions
+    default: op
