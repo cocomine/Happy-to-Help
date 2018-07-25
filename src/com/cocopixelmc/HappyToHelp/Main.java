@@ -1,9 +1,15 @@
 package com.cocopixelmc.HappyToHelp;
 
+import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.cocopixelmc.HappyToHelp.Tutorial.ChatPacket;
+import com.cocopixelmc.HappyToHelp.Tutorial.HideChat;
+import com.cocopixelmc.HappyToHelp.Tutorial.RunType.ActionBar;
+import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Msg;
+import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Song;
+import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Title;
+import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Tp;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 
@@ -15,13 +21,24 @@ public class Main extends JavaPlugin implements Listener{
     public void onEnable() {
 		getCommand("happyhelp").setExecutor(new Cmd(this));
 		
-		getConfig().addDefault("Step", "[]");
+		getConfig().options().copyDefaults(true);
 		saveDefaultConfig();
 		reloadConfig();
 		
-		protocolManager = ProtocolLibrary.getProtocolManager();
+		new ActionBar();
+		new Msg(this);
+		new Song();
+		new Title();
+		new Tp();
 		
-		new ChatPacket(protocolManager, this);
+		if (Bukkit.getPluginManager().isPluginEnabled("ProtocolLib")){
+			protocolManager = ProtocolLibrary.getProtocolManager();
+			protocolManager.addPacketListener(new HideChat());
+			getLogger().info("ProtocolLib Hook");
+		} else {
+			getLogger().warning("ProtocolLib Not Enabled!!");
+			this.getPluginLoader().disablePlugin(this);
+		}
 		
 		getLogger().info("Happy to Help Enable!");
 	}

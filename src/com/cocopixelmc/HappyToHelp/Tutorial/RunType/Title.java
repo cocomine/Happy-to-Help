@@ -18,7 +18,7 @@ public class Title {
 			Titles.sendTitle(player, msg[0], fadeIn, stay, fadeOut);
 		}
 		if(type.equals("SUB")){
-			Titles.sendSubtitle(player, msg[0], fadeIn, stay, fadeOut);
+			Titles.sendSubtitle(player, msg[1], fadeIn, stay, fadeOut);
 		}
 	}
 }

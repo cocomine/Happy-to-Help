@@ -1,0 +1,65 @@
+Step:
+# 1
+- '{Type: "Title", TitleType: "FULL", fadeIn: 5, stay: 50, fadeOut: 5, Title: "&c非常感謝您使用", SUB-Title: "&6新手協助插件"}'
+- '{Type: "Sound", SoundType: "VILLAGER_YES", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+# 2
+- '{Type: "Title", TitleType: "MAIN", fadeIn: 5, stay: 50, fadeOut: 5, Title: "&c現在我來展示一下功能"}'
+- '{Type: "Sound", SoundType: "VILLAGER_HIT", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+# 3
+- '{Type: "Msg", Msg: ["&c聊天室訊息", "&6這裏可以打出多行的文字"]}'
+- '{Type: "Sound", SoundType: "VILLAGER_HAGGLE", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+# 4
+- '{Type: "ActionBar", Msg: "&c中間文字顯示 (Need API)"}'
+- '{Type: "Sound", SoundType: "VILLAGER_IDLE", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+# 5
+- '{Type: "Title", TitleType: "SUB", fadeIn: 5, stay: 50, fadeOut: 5, SUB-Title: "&6副標題"}'
+- '{Type: "Sound", SoundType: "VILLAGER_YES", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+# 6
+- '{Type: "Title", TitleType: "MAIN", fadeIn: 5, stay: 50, fadeOut: 5, Title: "&c主標題"}'
+- '{Type: "Sound", SoundType: "VILLAGER_IDLE", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+# 7
+- '{Type: "Title", TitleType: "FULL", fadeIn: 5, stay: 50, fadeOut: 5, Title: "&c主標題", SUB-Title: "&6副標題"}'
+- '{Type: "Sound", SoundType: "VILLAGER_NO", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+# 10
+- '{Type: "Title", TitleType: "MAIN", fadeIn: 5, stay: 50, fadeOut: 5, Title: "&c聲音"}'
+- '{Type: "Sound", SoundType: "ANVIL_USE", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+# 11
+- '{Type: "Title", TitleType: "MAIN", fadeIn: 5, stay: 60, fadeOut: 0, Title: "&c傳送??"}'
+- '{Type: "Sound", SoundType: "VILLAGER_HAGGLE", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+- '{Type: "Title", TitleType: "FULL", fadeIn: 0, stay: 50, fadeOut: 0, Title: "&c傳送??", SUB-Title: "&6."}'
+- '{Type: "Delay", Millis: 1000}'
+- '{Type: "Title", TitleType: "FULL", fadeIn: 0, stay: 50, fadeOut: 0, Title: "&c傳送??", SUB-Title: "&6.."}'
+- '{Type: "Delay", Millis: 1000}'
+- '{Type: "Title", TitleType: "FULL", fadeIn: 0, stay: 60, fadeOut: 0, Title: "&c傳送??", SUB-Title: "&6..."}'
+#- '{Type: "Tp", world: "world", X: 162.348, Y: 75, Z: 263.465, Yaw: -126.7, Pitch: -10.6}'
+- '{Type: "Delay", Millis: 1000}'
+- '{Type: "Title", TitleType: "FULL", fadeIn: 0, stay: 50, fadeOut: 5, Title: "&c我怕把你傳送到虛空", SUB-Title: "&6就不作示範了"}'
+- '{Type: "Sound", SoundType: "VILLAGER_IDLE", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+# 12
+- '{Type: "Title", TitleType: "FULL", fadeIn: 5, stay: 50, fadeOut: 5, Title: "&c當然還有", SUB-Title: "&6延遲"}'
+- '{Type: "Sound", SoundType: "VILLAGER_YES", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+- '{Type: "Msg", Msg: ["&c這我們現在來等三秒"]}'
+- '{Type: "Sound", SoundType: "VILLAGER_HAGGLE", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+- '{Type: "Msg", Msg: ["&c叮~叮~"]}'
+- '{Type: "Sound", SoundType: "ORB_PICKUP", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 400}'
+- '{Type: "Sound", SoundType: "ORB_PICKUP", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 1000}'
+- '{Type: "Msg", Msg: ["&e看到沒有?", "&c這個是很重要的", "&6沒有了他...", "&6會嚇死你 lol"]}'
+- '{Type: "Sound", SoundType: "VILLAGER_YES", Volume: 10, Pitch: 1}'
+- '{Type: "Delay", Millis: 3000}'
+# 13
+- '{Type: "Sound", SoundType: "VILLAGER_IDLE", Volume: 10, Pitch: 1}'
+- '{Type: "Msg", Msg: ["&e當然還有一些附屬功能", "正在進行新手教學的和其他玩家彼此不會看到", "和正在進行新手教學的玩家不允許移動", "而且聊天室只會出現新手教學的文字而不會出現其他文字", " ", "&c示範完畢謝謝各位收看"]}'

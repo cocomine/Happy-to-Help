@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.cocopixelmc</groupId>
   <artifactId>HappytoHelp</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>Happy-to-Help</name>
   <build>
     <defaultGoal>install</defaultGoal>
@@ -55,6 +55,13 @@
     	<artifactId>json</artifactId>
     	<version>20180130</version>
 	</dependency>
+	<!--Spigot API-->
+    <dependency>
+           <groupId>org.spigotmc</groupId>
+           <artifactId>spigot-api</artifactId>
+           <version>1.8.8-R0.1-SNAPSHOT</version>
+           <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <repositories>
@@ -62,32 +69,9 @@
     		<id>dmulloy2-repo</id>
     		<url>http://repo.dmulloy2.net/content/groups/public/</url>
   		</repository>
-  		<!-- And so on -->
-  		<repository>
-    		<id>central</id>
-    		<name>bintray</name>
-    		<url>http://jcenter.bintray.com</url>
-  		</repository>
-  		<repository>
-    		<id>jcenter</id>
-    		<name>jcenter-bintray</name>
-    		<url>http://jcenter.bintray.com</url>
-  		</repository>
-  		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
-		<repository>
-    		<id>Scarsz-Jenkins</id>
-    		<url>http://ci.scarsz.me/plugin/repository/everything/</url>
-    		<snapshots>
-        		<enabled>true</enabled>
-        		<updatePolicy>always</updatePolicy>
-    		</snapshots>
-		</repository>
-		<repository>
-        	<id>sk89q-repo</id>
-        	<url>http://maven.sk89q.com/repo/</url>
+    	<repository>
+        	<id>spigot-repo</id>
+        	<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
     	</repository>
 	</repositories>
 

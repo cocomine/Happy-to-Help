@@ -26,6 +26,7 @@ public class Cmd implements Listener, CommandExecutor {
 				if(args[0].equalsIgnoreCase("reload")){
 					if(sender.hasPermission("HappyToHelp.admin")){
 						plugin.reloadConfig();
+						sender.sendMessage(ChatColor.GREEN+"Config reloaded!!");
 					}else{
 						sender.sendMessage(ChatColor.RED+"You not have Permission");
 					}

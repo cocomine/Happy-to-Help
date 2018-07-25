@@ -1,14 +1,15 @@
 package com.cocopixelmc.HappyToHelp.Tutorial.RunType;
 
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
-public class Sound {
+public class Song {
 
-	public Sound(){
+	public Song(){
 		
 	}
 	
 	public static void PlaySound(Player player, String soungtype, float volume, float pitch){
-		player.playSound(player.getLocation(), soungtype, volume, pitch);
+		player.playSound(player.getLocation(), Sound.valueOf(soungtype), volume, pitch);
 	}
 }

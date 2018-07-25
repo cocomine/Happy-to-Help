@@ -2,7 +2,7 @@ name: HappyToHelp
 main: com.cocopixelmc.HappyToHelp.Main
 version: 0.1
 author: [cocomine]
-softdepend: [PlayerDeath2]
+softdepend: [PlayerDeath2, ProtocolLib]
 description: Help player to start
 commands:
   happyhelp:
