@@ -21,12 +21,11 @@ public class HidePlayer implements PacketListener{
 	@Override
 	public void onPacketSending(PacketEvent e) {
 		Player player = e.getPlayer();
-		
+
 		if(Tutorial.RuningList.contains(player)){
 			e.setCancelled(true);
 		}
 		
-		e.getPacket().get
 	}
 
 	@Override
@@ -38,7 +37,7 @@ public class HidePlayer implements PacketListener{
 	public ListeningWhitelist getSendingWhitelist() {
 		Builder bli = ListeningWhitelist.newBuilder();
 		bli.highest();
-		bli.types(PacketType.Play.Server.ENTITY);
+		bli.types(PacketType.Play.Server.ENTITY_LOOK, PacketType.Play.Server.ENTITY_DESTROY, PacketType.Play.Server.ENTITY_TELEPORT, PacketType.Play.Server.ENTITY, PacketType.Play.Server.ENTITY_HEAD_ROTATION, PacketType.Play.Server.ENTITY_VELOCITY, PacketType.Play.Server.BED, PacketType.Play.Server.ENTITY_STATUS, PacketType.Play.Server.ENTITY_STATUS, PacketType.Play.Server.ENTITY_EFFECT, PacketType.Play.Server.ENTITY_EQUIPMENT, PacketType.Play.Server.SPAWN_ENTITY, PacketType.Play.Server.PLAYER_INFO) ;
 		ListeningWhitelist li = bli.build();
 		return li;
 	}

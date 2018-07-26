@@ -1,3 +1,4 @@
+BlockWorld: []
 Step:
 # 1
 - '{Type: "Title", TitleType: "FULL", fadeIn: 5, stay: 50, fadeOut: 5, Title: "&c非常感謝您使用", SUB-Title: "&6新手協助插件"}'

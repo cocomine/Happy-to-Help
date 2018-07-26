@@ -3,6 +3,7 @@ package com.cocopixelmc.HappyToHelp.Tutorial;
 import java.util.HashSet;
 import java.util.List;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.json.JSONObject;
 
@@ -12,10 +13,9 @@ import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Msg;
 import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Song;
 import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Title;
 import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Tp;
-
 import net.md_5.bungee.api.ChatColor;
 
-public class Tutorial {
+public class Tutorial{
 
 	private Main plugin;
 	public static HashSet<Player> RuningList = new HashSet<Player>();
@@ -29,6 +29,8 @@ public class Tutorial {
 			public void run() {
 				try {
 					RuningList.add(player);
+					toggle(player);
+					
 					List<String> steps = plugin.getConfig().getStringList("Step");
 					for(String step : steps){
 						JSONObject json = new JSONObject(step);
@@ -53,12 +55,29 @@ public class Tutorial {
 							Song.PlaySound(player, json.getString("SoundType"), json.getFloat("Volume"), json.getFloat("Pitch"));
 						}
 					}
+					
 					RuningList.remove(player);
+					toggle(player);
+					
 				}catch(Exception e) {
 					player.sendMessage(ChatColor.RED+"Have some error please contact admin");
 					e.printStackTrace();
 				}
 			}
 		}.start();
+	}
+	
+	private void toggle(Player player){
+		Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+			@Override
+			public void run() {
+				for(Player hideplayer : Bukkit.getOnlinePlayers()){
+					if(!hideplayer.equals(player)){
+						Main.entityHider.toggleEntity(player, hideplayer);
+						Main.entityHider.toggleEntity(hideplayer, player);
+					}
+				}
+			}
+		}, 0l);
 	}
 }

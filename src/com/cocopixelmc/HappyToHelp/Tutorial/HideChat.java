@@ -68,12 +68,12 @@ public class HideChat implements PacketListener{
             try {
             	JSONObject json = new JSONObject(e.getPacket().getChatComponents().read(0).getJson());
 				JSONArray extra = json.getJSONArray("extra");
-				System.out.println(json);  //debug
+				//System.out.println(json);  //debug
 		
 				if(extra.getString(0).startsWith("HappyHelp")){
 					extra.remove(0);
 					json.put("extra", extra);
-					System.out.println(json);//debug
+					//System.out.println(json);//debug
 				
 					msg.setJson(json.toString());
 					chatComponents.write(0, msg);
@@ -81,7 +81,7 @@ public class HideChat implements PacketListener{
 					e.setCancelled(true);
 				}
             }catch(Exception e1) {
-            	e1.printStackTrace();
+            	//e1.printStackTrace();
             }
 		}
 	}

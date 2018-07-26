@@ -35,8 +35,10 @@ public class Cmd implements Listener, CommandExecutor {
 				
 				if(args[0].equalsIgnoreCase("run")){
 					if(sender instanceof Player){
-						Tutorial tutorial = new Tutorial(plugin);
-						tutorial.Run((Player) sender);
+						if(!plugin.getConfig().getStringList("BlockWorld").contains(((Player) sender).getWorld().getName())){
+							Tutorial tutorial = new Tutorial(plugin);
+							tutorial.Run((Player) sender);
+						}
 					}else{
 						sender.sendMessage(ChatColor.RED+"This command is only player to use");
 					}

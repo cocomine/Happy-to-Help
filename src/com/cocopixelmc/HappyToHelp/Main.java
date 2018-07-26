@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.cocopixelmc.HappyToHelp.EntityHider.Policy;
 import com.cocopixelmc.HappyToHelp.Tutorial.BlockMove;
 import com.cocopixelmc.HappyToHelp.Tutorial.HideChat;
 import com.cocopixelmc.HappyToHelp.Tutorial.RunType.ActionBar;
@@ -17,6 +18,7 @@ import com.comphenix.protocol.ProtocolManager;
 public class Main extends JavaPlugin implements Listener{
 
 	public static ProtocolManager protocolManager;
+	public static EntityHider entityHider;
 
 	@Override
     public void onEnable() {
@@ -36,6 +38,7 @@ public class Main extends JavaPlugin implements Listener{
 		if (Bukkit.getPluginManager().isPluginEnabled("ProtocolLib")){
 			protocolManager = ProtocolLibrary.getProtocolManager();
 			protocolManager.addPacketListener(new HideChat(this));
+			entityHider = new EntityHider(this, Policy.BLACKLIST);
 			getLogger().info("ProtocolLib Hook");
 		} else {
 			getLogger().warning("ProtocolLib Not Enabled!!");
