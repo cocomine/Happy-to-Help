@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.cocopixelmc.HappyToHelp.Tutorial.BlockMove;
 import com.cocopixelmc.HappyToHelp.Tutorial.HideChat;
 import com.cocopixelmc.HappyToHelp.Tutorial.RunType.ActionBar;
 import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Msg;
@@ -30,10 +31,11 @@ public class Main extends JavaPlugin implements Listener{
 		new Song();
 		new Title();
 		new Tp();
+		new BlockMove(this);
 		
 		if (Bukkit.getPluginManager().isPluginEnabled("ProtocolLib")){
 			protocolManager = ProtocolLibrary.getProtocolManager();
-			protocolManager.addPacketListener(new HideChat());
+			protocolManager.addPacketListener(new HideChat(this));
 			getLogger().info("ProtocolLib Hook");
 		} else {
 			getLogger().warning("ProtocolLib Not Enabled!!");

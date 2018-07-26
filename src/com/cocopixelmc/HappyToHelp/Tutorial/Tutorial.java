@@ -1,8 +1,8 @@
 package com.cocopixelmc.HappyToHelp.Tutorial;
 
+import java.util.HashSet;
 import java.util.List;
 
-import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.json.JSONObject;
 
@@ -18,22 +18,22 @@ import net.md_5.bungee.api.ChatColor;
 public class Tutorial {
 
 	private Main plugin;
+	public static HashSet<Player> RuningList = new HashSet<Player>();
 
 	public Tutorial(Main plugin){
 		this.plugin = plugin;
 	}
 	
 	public void Run(Player player){
-		player.setGameMode(GameMode.SPECTATOR);
 		new Thread(){
 			public void run() {
 				try {
-					HideChat.RuningList.add(player);
+					RuningList.add(player);
 					List<String> steps = plugin.getConfig().getStringList("Step");
 					for(String step : steps){
 						JSONObject json = new JSONObject(step);
 						String type = json.getString("Type");
-			
+
 						if(type.equalsIgnoreCase("ActionBar")){
 							ActionBar.SendActionBar(player, json.getString("Msg"));
 						}
@@ -53,13 +53,12 @@ public class Tutorial {
 							Song.PlaySound(player, json.getString("SoundType"), json.getFloat("Volume"), json.getFloat("Pitch"));
 						}
 					}
-					HideChat.RuningList.remove(player);
+					RuningList.remove(player);
 				}catch(Exception e) {
 					player.sendMessage(ChatColor.RED+"Have some error please contact admin");
 					e.printStackTrace();
 				}
 			}
 		}.start();
-		player.setGameMode(GameMode.SURVIVAL);
 	}
 }

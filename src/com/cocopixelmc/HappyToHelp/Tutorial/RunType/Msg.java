@@ -15,7 +15,7 @@ public class Msg {
 	public static void SendMsg(Player player, List<Object> list){
 		for(Object msg : list){
 			String colormsg = ChatColor.translateAlternateColorCodes('&', msg.toString());
-			colormsg = ChatColor.AQUA + ChatColor.BLUE.toString() + ChatColor.BOLD + ChatColor.RESET + colormsg;
+			colormsg = "HappyHelp" + ChatColor.RESET + colormsg;
 			player.sendMessage(colormsg);
 		}
 	}
