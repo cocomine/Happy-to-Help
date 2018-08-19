@@ -60,6 +60,10 @@ public class Tutorial{
 					toggle(player);
 					
 				}catch(Exception e) {
+					
+					RuningList.remove(player);
+					toggle(player);
+					
 					player.sendMessage(ChatColor.RED+"Have some error please contact admin");
 					e.printStackTrace();
 				}

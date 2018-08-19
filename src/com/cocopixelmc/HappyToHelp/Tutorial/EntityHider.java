@@ -1,4 +1,4 @@
-package com.cocopixelmc.HappyToHelp;
+package com.cocopixelmc.HappyToHelp.Tutorial;
 
 import static com.comphenix.protocol.PacketType.Play.Server.*;
 

@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.cocopixelmc</groupId>
   <artifactId>HappytoHelp</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <name>Happy-to-Help</name>
   <build>
     <defaultGoal>install</defaultGoal>
@@ -36,6 +36,15 @@
           			<goals>
             			<goal>shade</goal>
           			</goals>
+          			<configuration>
+             			<minimizeJar>true</minimizeJar>
+             			<relocations>
+                			<relocation>
+                  				<pattern>org.json</pattern>
+                  				<shadedPattern>com.cocopixelmc.org.json</shadedPattern>
+                			</relocation>
+              			</relocations>
+            		</configuration>
         		</execution>
       		</executions>
     	</plugin>
@@ -48,6 +57,7 @@
     	<groupId>com.comphenix.protocol</groupId>
     	<artifactId>ProtocolLib-API</artifactId>
     	<version>4.2.1</version>
+    	<scope>provided</scope>
  	 </dependency>
   	<!-- And so on -->
   	<dependency>
@@ -77,8 +87,6 @@
 
   <properties>
   		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  		<maven.compiler.source>1.8</maven.compiler.source>
-  		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	
 </project>

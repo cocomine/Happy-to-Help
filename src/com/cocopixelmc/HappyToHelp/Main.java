@@ -4,8 +4,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.cocopixelmc.HappyToHelp.EntityHider.Policy;
 import com.cocopixelmc.HappyToHelp.Tutorial.BlockMove;
+import com.cocopixelmc.HappyToHelp.Tutorial.EntityHider;
+import com.cocopixelmc.HappyToHelp.Tutorial.EntityHider.Policy;
 import com.cocopixelmc.HappyToHelp.Tutorial.HideChat;
 import com.cocopixelmc.HappyToHelp.Tutorial.RunType.ActionBar;
 import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Msg;
