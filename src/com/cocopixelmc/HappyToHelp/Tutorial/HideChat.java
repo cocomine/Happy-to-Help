@@ -50,7 +50,7 @@ public class HideChat implements PacketListener{
 	public void onPacketReceiving(PacketEvent e) {
 		if(e.getPacketType().equals(PacketType.Play.Client.CHAT)){
 			Player player = e.getPlayer();
-			if(Tutorial.RuningList.contains(player)){
+			if(Main.RuningList.contains(player.getUniqueId())){
 				e.setCancelled(true);
 			}
 		}
@@ -61,7 +61,7 @@ public class HideChat implements PacketListener{
 	public void onPacketSending(PacketEvent e) {
 		Player player = e.getPlayer();
 		
-		if(Tutorial.RuningList.contains(player)){
+		if(Main.RuningList.contains(player.getUniqueId())){
 			StructureModifier <WrappedChatComponent> chatComponents = e.getPacket().getChatComponents();; 
             WrappedChatComponent msg = chatComponents.read(0);
             

@@ -1,5 +1,9 @@
 package com.cocopixelmc.HappyToHelp;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.UUID;
+
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -8,6 +12,7 @@ import com.cocopixelmc.HappyToHelp.Tutorial.BlockMove;
 import com.cocopixelmc.HappyToHelp.Tutorial.EntityHider;
 import com.cocopixelmc.HappyToHelp.Tutorial.EntityHider.Policy;
 import com.cocopixelmc.HappyToHelp.Tutorial.HideChat;
+import com.cocopixelmc.HappyToHelp.Tutorial.Quit;
 import com.cocopixelmc.HappyToHelp.Tutorial.RunType.ActionBar;
 import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Msg;
 import com.cocopixelmc.HappyToHelp.Tutorial.RunType.Song;
@@ -20,6 +25,8 @@ public class Main extends JavaPlugin implements Listener{
 
 	public static ProtocolManager protocolManager;
 	public static EntityHider entityHider;
+	public static HashSet<UUID> RuningList = new HashSet<UUID>();
+	public static HashMap<UUID, Thread> ThreadID = new HashMap<UUID, Thread>();
 
 	@Override
     public void onEnable() {
@@ -35,6 +42,7 @@ public class Main extends JavaPlugin implements Listener{
 		new Title();
 		new Tp();
 		new BlockMove(this);
+		new Quit(this);
 		
 		if (Bukkit.getPluginManager().isPluginEnabled("ProtocolLib")){
 			protocolManager = ProtocolLibrary.getProtocolManager();
