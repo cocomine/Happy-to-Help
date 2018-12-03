@@ -1,10 +1,14 @@
 package com.cocopixelmc.HappyToHelp;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -27,6 +31,7 @@ public class Main extends JavaPlugin implements Listener{
 	public static EntityHider entityHider;
 	public static HashSet<UUID> RuningList = new HashSet<UUID>();
 	public static HashMap<UUID, Thread> ThreadID = new HashMap<UUID, Thread>();
+	public FileConfiguration SignpostConfig;
 
 	@Override
     public void onEnable() {
@@ -35,6 +40,9 @@ public class Main extends JavaPlugin implements Listener{
 		getConfig().options().copyDefaults(true);
 		saveDefaultConfig();
 		reloadConfig();
+		
+		createSignpostConfig();
+		reloadSignpostConfig();
 		
 		new ActionBar();
 		new Msg(this);
@@ -60,5 +68,31 @@ public class Main extends JavaPlugin implements Listener{
 	@Override
     public void onDisable() {
 		getLogger().info("Happy to Help Disable!");
+	}
+	
+	public void reloadSignpostConfig(){
+		File Signpost = new File(this.getDataFolder(), "Signpost.yml");
+		SignpostConfig = null;
+		SignpostConfig = YamlConfiguration.loadConfiguration(Signpost);
+	}
+	
+	public void createSignpostConfig(){
+		File Signpost = new File(this.getDataFolder(), "Signpost.yml");
+		if (!Signpost.exists()) {
+            try {
+            	Signpost.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+	}
+	
+	public void saveSignpostConfig(){
+		File Signpost = new File(this.getDataFolder(), "Signpost.yml");
+		try {
+			SignpostConfig.save(Signpost);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
